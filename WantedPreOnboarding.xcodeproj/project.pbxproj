@@ -13,6 +13,8 @@
 		0827EB1828C7706800628A82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0827EB1628C7706800628A82 /* Main.storyboard */; };
 		0827EB1A28C7706900628A82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0827EB1928C7706900628A82 /* Assets.xcassets */; };
 		0827EB1D28C7706900628A82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0827EB1B28C7706900628A82 /* LaunchScreen.storyboard */; };
+		0827EB2528C7718100628A82 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0827EB2428C7718100628A82 /* Constants.swift */; };
+		0827EB2828C7774000628A82 /* CityWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0827EB2728C7774000628A82 /* CityWeatherCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		0827EB1928C7706900628A82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0827EB1C28C7706900628A82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0827EB1E28C7706900628A82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0827EB2428C7718100628A82 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0827EB2728C7774000628A82 /* CityWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +64,21 @@
 				0827EB1228C7706800628A82 /* SceneDelegate.swift */,
 				0827EB1428C7706800628A82 /* ViewController.swift */,
 				0827EB1628C7706800628A82 /* Main.storyboard */,
+				0827EB2628C7770B00628A82 /* Cells */,
 				0827EB1928C7706900628A82 /* Assets.xcassets */,
 				0827EB1B28C7706900628A82 /* LaunchScreen.storyboard */,
 				0827EB1E28C7706900628A82 /* Info.plist */,
+				0827EB2428C7718100628A82 /* Constants.swift */,
 			);
 			path = WantedPreOnboarding;
+			sourceTree = "<group>";
+		};
+		0827EB2628C7770B00628A82 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0827EB2728C7774000628A82 /* CityWeatherCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +155,8 @@
 				0827EB1528C7706800628A82 /* ViewController.swift in Sources */,
 				0827EB1128C7706800628A82 /* AppDelegate.swift in Sources */,
 				0827EB1328C7706800628A82 /* SceneDelegate.swift in Sources */,
+				0827EB2528C7718100628A82 /* Constants.swift in Sources */,
+				0827EB2828C7774000628A82 /* CityWeatherCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
