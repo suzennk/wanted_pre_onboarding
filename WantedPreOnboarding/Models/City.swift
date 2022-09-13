@@ -28,6 +28,6 @@ struct City: Decodable {
 }
 
 struct Coordinate: Decodable {
-    let lon: Float
-    let lat: Float
+    let lon: Double
+    let lat: Double
 }

@@ -22,23 +22,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         
-        reloadData()
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NSNotification.Name(ListFetchUpdateNotification), object: nil)
+        
+        fetchData()
     }
     
-    func reloadData() {
-        dataArr = WeatherManager.shared.presetCityListEng.compactMap { cityName in
-            guard let city = WeatherManager.shared.supportedCityList.filter({ $0.name == cityName }).first else {
-                return nil
-            }
-            let cellData = CityWeatherCellData(
-                cityName: city.name,
-                imageUrlString: "sun.haze.fill",
-                temperature: Double.random(in: 1...100)
+    func fetchData() {
+        WeatherManager.shared.fetchWeatherData()
+    }
+    
+    @objc func reloadData() {
+        dataArr = WeatherManager.shared.weatherData.compactMap { (cityName, weatherData) in
+            CityWeatherCellData(cityName: cityName,
+                                imageUrlString: weatherData.weather.first?.icon ?? "",
+                                temperature: Double(weatherData.main.temp)
             )
-            return cellData
         }
-        
-        tableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
 
     // MARK: - UITableViewDataSource
