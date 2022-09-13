@@ -26,15 +26,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func reloadData() {
-        dataArr.removeAll()
-        
-        for country in Country.allCases {
+        dataArr = WeatherManager.shared.presetCityListEng.compactMap { cityName in
+            guard let city = WeatherManager.shared.supportedCityList.filter({ $0.name == cityName }).first else {
+                return nil
+            }
             let cellData = CityWeatherCellData(
-                cityName: country.rawValue,
+                cityName: city.name,
                 imageUrlString: "sun.haze.fill",
                 temperature: Double.random(in: 1...100)
             )
-            dataArr.append(cellData)
+            return cellData
         }
         
         tableView.reloadData()
